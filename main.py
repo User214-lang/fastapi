@@ -3,10 +3,25 @@ from pydantic import BaseModel
 from schemas import FeatureVectorChurn, DatasetRowChurn
 from dataset import load_dataset, load_validated_dataset, prepare_data, split_data, get_class_distribution
 import pandas as pd
-from model import train_model
 from sklearn.metrics import accuracy_score, f1_score
+from model import train_model, save_churn_model, load_churn_model
+from contextlib import asynccontextmanager
 
-app = FastAPI()
+MODEL = None
+MODEL_METRICS = None
+TRAINED_TIME = None
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    global MODEL, MODEL_METRICS, TRAINED_TIME
+    MODEL, MODEL_METRICS, TRAINED_TIME = load_churn_model()
+    if MODEL is not None:
+        print("Модель успешно загружена из файла")
+    else:
+        print("Модель не найдена. Обучите модель через POST /model/train")
+    yield
+
+app = FastAPI(lifespan=lifespan)
 
 @app.get("/")
 def read_root():
@@ -81,15 +96,26 @@ def dataset_split_info():
 
 @app.post("/model/train")
 def train_model_endpoint():
+    global MODEL, MODEL_METRICS, TRAINED_TIME
     try:
         model, X_train, X_test, y_train, y_test = train_model()
-        y_pred = model.predict(X_test)
-        accuracy = accuracy_score(y_test, y_pred)
-        f1 = f1_score(y_test, y_pred)
-        return {"accuracy": accuracy, "f1": f1}
+        MODEL = model
+        _, MODEL_METRICS, TRAINED_TIME = load_churn_model()
+        
+        return MODEL_METRICS
     except FileNotFoundError:
         raise HTTPException(status_code=404, detail="Dataset file not found")
     except ValueError as e:
         raise HTTPException(status_code=422, detail=str(e))
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/model/status")
+def model_status():
+    return {
+        "is_trained": MODEL is not None,
+        "trained_at": TRAINED_TIME,
+        "metrics": MODEL_METRICS
+    }
+
+
