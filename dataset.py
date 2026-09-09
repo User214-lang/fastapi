@@ -18,6 +18,18 @@ CATEGORICAL_FEATURES = [
     "payment_method"
 ]
 
+ALL_FEATURES_ORDER = [
+    "monthly_fee",
+    "usage_hours",
+    "support_requests",
+    "account_age_months",
+    "failed_payments",
+    "region",
+    "device_type",
+    "payment_method",
+    "autopay_enabled"
+]
+
 def load_dataset(path: str) -> pd.DataFrame:
     return pd.read_csv(path)
 
@@ -50,6 +62,7 @@ def prepare_data(df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.Series, List[str], 
 
     y = df["churn"]
     X = df.drop(columns=["churn"])
+    X = X[ALL_FEATURES_ORDER]
 
     numeric_features = NUMERIC_FEATURES.copy()
     categorical_features = CATEGORICAL_FEATURES.copy()
