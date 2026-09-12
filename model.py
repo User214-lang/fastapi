@@ -4,7 +4,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, f1_score
+from sklearn.metrics import accuracy_score, f1_score, roc_auc_score
 from typing import Tuple
 from dataset import load_validated_dataset, prepare_data, split_data, NUMERIC_FEATURES, CATEGORICAL_FEATURES
 import joblib
@@ -13,6 +13,7 @@ from datetime import datetime
 
 CHURN_MODEL_PATH = "models/churn_model.joblib"
 META_PATH = "models/churn_model_meta.json"
+HISTORY_PATH = "models/training_history.json"
 
 def build_model(model_type: str = "logreg", hyperparameters: dict = None) -> Pipeline:
     """Создание пайплайна"""
@@ -45,12 +46,16 @@ def train_model(data_path: str = "data/churn_dataset.csv", model_type: str = "lo
     model = train_churn_model(X_train, y_train, model_type, hyperparameters)
 
     y_pred = model.predict(X_test)
-    accuracy = accuracy_score(y_test, y_pred)
-    f1 = f1_score(y_test, y_pred)
-    metrics = {"accuracy": accuracy, "f1": f1}
+    y_proba = model.predict_proba(X_test)[:, 1]
+    metrics = {
+        "accuracy": float(accuracy_score(y_test, y_pred)),
+        "f1": float(f1_score(y_test, y_pred)),
+        "roc_auc": float(roc_auc_score(y_test, y_proba)),
+    }
     training_time = datetime.now().isoformat()
 
-    save_churn_model(model, metrics=metrics, training_time=training_time)
+    save_churn_model(model, metrics=metrics, training_time=training_time, 
+                     model_type=model_type, hyperparameters=hyperparameters) #!!!
 
     return model, X_train, X_test, y_train, y_test
 
@@ -113,3 +118,20 @@ def create_model(model_type: str = "logreg", hyperparameters: dict = None):
 
     else:
         raise ValueError(f"Unsupported model_type: {model_type}")
+
+def append_training_record(record: dict, path: str = HISTORY_PATH) -> None:
+    """Добавляет запись в историю обучений модели(json)"""
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    history = []
+    if os.path.exists(path):
+        with open(path, "r") as f:
+            history = json.load(f)
+    history.append(record)
+    with open(path, "w") as f:
+        json.dump(history, f, indent=2)
+
+def load_training_history(path: str = HISTORY_PATH) -> list:
+    if not os.path.exists(path):
+        return []
+    with open(path, "r") as f:
+        return json.load(f)

@@ -1,5 +1,6 @@
 from pydantic import BaseModel
-from typing import List
+from typing import List, Optional, Any
+from datetime import datetime
 
 class FeatureVectorChurn(BaseModel):
     monthly_fee: float
@@ -51,3 +52,19 @@ class PredictionResponseChurn(BaseModel):
 class TrainingConfigChurn(BaseModel):
     model_type: str
     hyperparameters: dict
+
+class ErrorResponse(BaseModel):
+    code: str
+    message: str
+    details: Optional[Any] = None
+
+class ModelMetrics(BaseModel):
+    accuracy: float
+    f1: float
+    roc_auc: Optional[float] = None
+
+class TrainingRecord(BaseModel):
+    trained_at: datetime
+    model_type: str
+    hyperparameters: dict
+    metrics: ModelMetrics
