@@ -1,7 +1,12 @@
 {
   "metrics": {
-    "accuracy": 0.79,
-    "f1": 0.045454545454545456
+    "accuracy": 0.7825,
+    "f1": 0.17142857142857143,
+    "roc_auc": 0.5847362514029181
   },
-  "training_time": "2026-09-09T03:09:09.894113"
+  "training_time": "2026-09-12T21:38:53.677222",
+  "model_type": "random_forest",
+  "hyperparameters": {
+    "n_estimators": 100
+  }
 }
