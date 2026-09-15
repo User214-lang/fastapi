@@ -4,6 +4,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
+from catboost import CatBoostClassifier
 from sklearn.metrics import accuracy_score, f1_score, roc_auc_score
 from typing import Tuple
 from dataset import load_validated_dataset, prepare_data, split_data, NUMERIC_FEATURES, CATEGORICAL_FEATURES
@@ -59,9 +60,11 @@ def train_model(data_path: str = "data/churn_dataset.csv", model_type: str = "lo
 
     return model, X_train, X_test, y_train, y_test
 
-def save_churn_model(model, path: str = CHURN_MODEL_PATH, metrics: dict = None,
+def save_churn_model(model, path: str = None, metrics: dict = None,
                      training_time: str = None, model_type: str = None,
                      hyperparameters: dict = None):
+    if path is None:
+        path = CHURN_MODEL_PATH
     joblib.dump(model, path)
     if metrics is not None or training_time is not None or model_type is not None or hyperparameters is not None:
         meta = {}
@@ -78,7 +81,9 @@ def save_churn_model(model, path: str = CHURN_MODEL_PATH, metrics: dict = None,
         with open(meta_path, 'w') as f:
             json.dump(meta, f, indent=2)
 
-def load_churn_model(path: str = CHURN_MODEL_PATH):
+def load_churn_model(path: str = None):
+    if path is None:
+        path = CHURN_MODEL_PATH
     if not os.path.exists(path):
         return None, None, None, None, None
 
@@ -116,11 +121,25 @@ def create_model(model_type: str = "logreg", hyperparameters: dict = None):
         default_params.update(hyperparameters)
         return RandomForestClassifier(**default_params)
 
+    elif model_type == "catboost":
+        default_params = {
+            "iterations": 500,
+            "learning_rate": 0.1,
+            "depth": 6,
+            "verbose": 0,
+            "random_state": 42,
+            "allow_writing_files": False,
+        }
+        default_params.update(hyperparameters)
+        return CatBoostClassifier(**default_params)
+
     else:
         raise ValueError(f"Unsupported model_type: {model_type}")
 
-def append_training_record(record: dict, path: str = HISTORY_PATH) -> None:
+def append_training_record(record: dict, path: str = None) -> None:
     """Добавляет запись в историю обучений модели(json)"""
+    if path is None:
+        path = HISTORY_PATH
     os.makedirs(os.path.dirname(path), exist_ok=True)
     history = []
     if os.path.exists(path):
@@ -130,7 +149,9 @@ def append_training_record(record: dict, path: str = HISTORY_PATH) -> None:
     with open(path, "w") as f:
         json.dump(history, f, indent=2)
 
-def load_training_history(path: str = HISTORY_PATH) -> list:
+def load_training_history(path: str = None) -> list:
+    if path is None:
+        path = HISTORY_PATH
     if not os.path.exists(path):
         return []
     with open(path, "r") as f:

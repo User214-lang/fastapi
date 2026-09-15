@@ -2,6 +2,9 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from typing import Tuple, List
 from schemas import DatasetRowChurn
+import logging
+
+logger = logging.getLogger("churn_service.dataset")
 
 NUMERIC_FEATURES = [
     "monthly_fee",
@@ -31,7 +34,10 @@ ALL_FEATURES_ORDER = [
 ]
 
 def load_dataset(path: str) -> pd.DataFrame:
-    return pd.read_csv(path)
+    logger.info("Загрузка датасета: %s", path)
+    df = pd.read_csv(path)
+    logger.info("Датасет загружен: строк=%d, колонок=%d", len(df), len(df.columns))
+    return df
 
 def parse_dataset(df: pd.DataFrame) -> List[DatasetRowChurn]:
     rows = []

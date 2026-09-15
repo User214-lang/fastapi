@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List, Optional, Any
+from typing import List, Optional, Any, Literal
 from datetime import datetime
 
 class FeatureVectorChurn(BaseModel):
@@ -14,6 +14,7 @@ class FeatureVectorChurn(BaseModel):
     autopay_enabled: int
 
     model_config = {
+        "extra": "forbid",   #!!!
         "json_schema_extra": {
             "examples": [
                 {
@@ -50,7 +51,7 @@ class PredictionResponseChurn(BaseModel):
     }
 
 class TrainingConfigChurn(BaseModel):
-    model_type: str
+    model_type: Literal["logreg", "random_forest", "catboost"]
     hyperparameters: dict
 
 class ErrorResponse(BaseModel):

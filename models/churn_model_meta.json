@@ -1,12 +1,10 @@
 {
   "metrics": {
-    "accuracy": 0.7825,
-    "f1": 0.17142857142857143,
-    "roc_auc": 0.5847362514029181
+    "accuracy": 0.7875,
+    "f1": 0.0449438202247191,
+    "roc_auc": 0.6091179999225975
   },
-  "training_time": "2026-09-12T21:38:53.677222",
-  "model_type": "random_forest",
-  "hyperparameters": {
-    "n_estimators": 100
-  }
+  "training_time": "2026-09-15T17:49:31.128894",
+  "model_type": "logreg",
+  "hyperparameters": {}
 }

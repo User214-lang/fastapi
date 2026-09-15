@@ -11,9 +11,42 @@ from dataset import ALL_FEATURES_ORDER
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
 from starlette.exceptions import HTTPException as StarletteHTTPException
-import json, os
+import json, os, sys
 from datetime import datetime
+import logging
+from pythonjsonlogger import jsonlogger
 
+def setup_logging():
+
+    os.makedirs("logs", exist_ok=True)
+    formatter = jsonlogger.JsonFormatter(
+        fmt="%(asctime)s %(levelname)s %(name)s %(message)s",
+        rename_fields={
+            "asctime": "timestamp",
+            "levelname": "level",
+            "name": "logger",
+            "message": "message",
+        },
+        datefmt="%Y-%m-%dT%H:%M:%S",
+        json_ensure_ascii=False,
+    )
+
+    stdout_handler = logging.StreamHandler(sys.stdout)
+    stdout_handler.setFormatter(formatter)
+
+    file_handler = logging.FileHandler("logs/churn_service.log", encoding="utf-8")
+    file_handler.setFormatter(formatter)
+
+    root = logging.getLogger()
+    root.handlers.clear()
+    root.addHandler(stdout_handler)
+    root.addHandler(file_handler)
+    root.setLevel(logging.INFO)
+
+setup_logging()
+logger = logging.getLogger("churn_service")
+
+DATASET_PATH = "data/churn_dataset.csv"
 MODEL = None
 MODEL_METRICS = None
 TRAINED_TIME = None
@@ -25,9 +58,9 @@ async def lifespan(app: FastAPI):
     global MODEL, MODEL_METRICS, TRAINED_TIME, MODEL_TYPE, MODEL_HYPERPARAMS
     MODEL, MODEL_METRICS, TRAINED_TIME, MODEL_TYPE, MODEL_HYPERPARAMS = load_churn_model()
     if MODEL is not None:
-        print("Модель успешно загружена из файла")
+        logger.info("Модель загружена: тип=%s, обучена=%s", MODEL_TYPE, TRAINED_TIME)
     else:
-        print("Модель не найдена. Обучите модель через POST /model/train")
+        logger.warning("Модель не найдена при старте. Обучите через POST /model/train")
     yield
 
 app = FastAPI(lifespan=lifespan)
@@ -77,6 +110,7 @@ def predict(features: Union[FeatureVectorChurn, List[FeatureVectorChurn]]):
     global MODEL
 
     if MODEL is None:
+        logger.warning("POST /predict: модель не обучена, 503")
         raise HTTPException(status_code=503, detail="Модель еще не обучена")
 
     if isinstance(features, FeatureVectorChurn):
@@ -86,15 +120,31 @@ def predict(features: Union[FeatureVectorChurn, List[FeatureVectorChurn]]):
         features_list = features
         single_input = False
 
+    logger.info(
+        "POST /predict: получено объектов=%d, режим=%s",
+        len(features_list),
+        "single" if single_input else "batch",
+    )
+
     data = [f.model_dump() for f in features_list]
     df = pd.DataFrame(data)
+
     missing_cols = set(ALL_FEATURES_ORDER) - set(df.columns)
     if missing_cols:
+        logger.error(
+            "POST /predict: отсутствуют колонки %s", sorted(missing_cols)
+        )
         raise HTTPException(status_code=400, detail=f"Missing columns: {missing_cols}")
+    
     df = df[ALL_FEATURES_ORDER]
 
-    predictions = MODEL.predict(df)
-    probabilities = MODEL.predict_proba(df)
+    try:
+        predictions = MODEL.predict(df)
+        probabilities = MODEL.predict_proba(df)
+
+    except Exception:
+        logger.exception("POST /predict: ошибка во время MODEL.predict/predict_proba")
+        raise
 
     results = []
     for i, pred in enumerate(predictions):
@@ -104,13 +154,19 @@ def predict(features: Union[FeatureVectorChurn, List[FeatureVectorChurn]]):
             "probability": prob
         })
 
+    predicted_classes = [r["churn_prediction"] for r in results]
+    logger.info(
+        "POST /predict: успешно обработано=%d, предсказания=%s",
+        len(results),
+        predicted_classes,
+    )
+
     if single_input:
         return results[0]
     else:
         return results
 
 @app.get("/dataset/preview")
-
 def dataset_preview():
         try:
             df = load_dataset("data/churn_dataset.csv")
@@ -121,6 +177,7 @@ def dataset_preview():
             raise HTTPException(status_code=404, detail="Dataset file not found")
 
         except Exception as e:
+            logger.exception("Ошибка при обучении: %s", e)
             raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/dataset/info")
@@ -223,8 +280,11 @@ responses={
 )
 def train_model_endpoint(config: TrainingConfigChurn):
     global MODEL, MODEL_METRICS, TRAINED_TIME, MODEL_TYPE, MODEL_HYPERPARAMS
+    logger.info("Запуск обучения: model_type=%s, hyperparameters=%s",
+            config.model_type, config.hyperparameters)
     try:
         model, X_train, X_test, y_train, y_test = train_model(
+            data_path=DATASET_PATH,
             model_type=config.model_type,
             hyperparameters=config.hyperparameters
         )
@@ -240,12 +300,25 @@ def train_model_endpoint(config: TrainingConfigChurn):
         }
         append_training_record(record)
 
+        logger.info("Обучение завершено: accuracy=%.4f, f1=%.4f, roc_auc=%.4f",
+                MODEL_METRICS["accuracy"], MODEL_METRICS["f1"], MODEL_METRICS["roc_auc"])
         
         return MODEL_METRICS
     except FileNotFoundError:
+        logger.error("Датасет не найден: %s", DATASET_PATH)
         raise HTTPException(status_code=404, detail="Dataset file not found")
-    except ValueError as e:
-        raise HTTPException(status_code=422, detail=str(e))
+    
+    except ValueError as e:                     #!!!
+        logger.warning("Ошибка данных: %s", e)
+        raise HTTPException(
+            status_code=400,
+            detail=ErrorResponse(
+                code="DATA_ERROR",
+                message=str(e),
+                details=None,
+            ).model_dump(),
+        )
+    
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -268,6 +341,7 @@ def model_schema():
 
 @app.exception_handler(StarletteHTTPException)
 async def http_exception_handler(request: Request, exc: StarletteHTTPException):
+    logger.warning("HTTP %d: %s", exc.status_code, exc.detail)
     if isinstance(exc.detail, dict) and "code" in exc.detail:
         error = exc.detail
     else:
@@ -283,10 +357,13 @@ async def http_exception_handler(request: Request, exc: StarletteHTTPException):
             details=None
         ).model_dump()
 
-    return JSONResponse(status_code=exc.status_code, content=error)
+    return JSONResponse(
+        status_code=exc.status_code, 
+        content=error)
 
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
+    logger.warning("Ошибка валидации запроса: %s", exc.errors())
     error = ErrorResponse(
         code = "VALIDATION_ERROR", 
         message = "Ошибка валидации данных", 
@@ -299,11 +376,18 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
 
 @app.exception_handler(ValueError)
 async def value_error_handler(request: Request, exc: ValueError):
+    logger.error("ValueError: %s", exc)
     error = ErrorResponse(
         code = "DATA_ERROR", 
         message = str(exc),
         details = None
     )
+
+    return JSONResponse(                          #!!!
+        status_code=400,
+        content=error.model_dump()
+    )
+
 
 @app.get("/model/metrics")
 def model_metrics(limit: int = 10, model_type: str = None):
@@ -317,4 +401,17 @@ def model_metrics(limit: int = 10, model_type: str = None):
     return {
         "last_metrics": MODEL_METRICS,
         "recent_records": recent,
+    }
+
+@app.get("/health")
+def health():
+    model_ok = MODEL is not None
+    dataset_ok = os.path.exists(DATASET_PATH)
+
+    status = "ok" if (model_ok and dataset_ok) else "not ready"
+
+    return {
+        "status" : status,
+        "model_loaded" : model_ok,
+        "dataset_loaded" : dataset_ok,
     }
