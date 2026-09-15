@@ -1,0 +1,27 @@
+# Виртуальные окружения
+venv/
+.venv/
+env/
+
+# Python кеши
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Docker артефакты
+*.tar
+*.tar.gz
+*.tar.zst
+
+# Модели (создаются при обучении)y
+# CatBoost
+catboost_info/
+
+# IDE
+.vscode/
+.idea/
+
+# Бэкапы и .env
+data/*backup*
+.env
