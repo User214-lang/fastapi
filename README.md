@@ -501,7 +501,18 @@ done
 
 ---
 
-##Тесты(выполнять из корня проекта)
-'''python
-python -m pytest tests/
-'''
+## Тестирование
+
+```bash
+python -m pytest tests/ -v
+```
+| Файл | Что проверяет |
+|------|---------------|
+| `conftest.py` | Общие фикстуры: `sample_df`, `sample_csv`, `client`, `valid_customer`. Автоматически подхватывается pytest. |
+| `test_dataset.py` | Функции подготовки данных: `prepare_data`, `split_data`, `get_class_distribution`. Проверяет корректность X/y, стратификацию, воспроизводимость. |
+| `test_model.py` | Создание и обучение моделей: `create_model`, `build_model`, `train_churn_model`, `save_churn_model`, `load_churn_model`, `append_training_record`, `load_training_history`. |
+| `test_errors.py` | Глобальные обработчики ошибок: 400, 404, 422, 503, 200. Проверяет формат `{code, message, details}`, валидацию полей, пустой датасет, отсутствие модели. |
+| `test_integration.py` | Полный пайплайн через `TestClient`: обучение через `/model/train`, статус через `/model/status`, предсказание через `/predict`. |
+| `test_predictions.py` | Случайные клиенты: 10 запросов к `/predict`, проверка структуры ответа и корректности вероятностей. |
+
+---
