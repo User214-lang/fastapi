@@ -217,5 +217,78 @@
       "f1": 0.0449438202247191,
       "roc_auc": 0.6091179999225975
     }
+  },
+  {
+    "trained_at": "2026-09-17T14:06:47.839313",
+    "model_type": "logreg",
+    "hyperparameters": {
+      "C": 0.5
+    },
+    "metrics": {
+      "accuracy": 0.79,
+      "f1": 0.045454545454545456,
+      "roc_auc": 0.6088083904175857
+    }
+  },
+  {
+    "trained_at": "2026-09-17T14:07:06.853208",
+    "model_type": "random_forest",
+    "hyperparameters": {
+      "n_estimators": 100,
+      "max_depth": 6
+    },
+    "metrics": {
+      "accuracy": 0.805,
+      "f1": 0.13333333333333333,
+      "roc_auc": 0.6340415650760478
+    }
+  },
+  {
+    "trained_at": "2026-09-17T14:07:18.222975",
+    "model_type": "catboost",
+    "hyperparameters": {
+      "iterations": 300,
+      "depth": 6,
+      "learning_rate": 0.1
+    },
+    "metrics": {
+      "accuracy": 0.7675,
+      "f1": 0.2184873949579832,
+      "roc_auc": 0.6126785092302334
+    }
+  },
+  {
+    "trained_at": "2026-09-17T14:11:29.203877",
+    "model_type": "logreg",
+    "hyperparameters": {},
+    "metrics": {
+      "accuracy": 0.7875,
+      "f1": 0.0449438202247191,
+      "roc_auc": 0.6091179999225975
+    }
+  },
+  {
+    "trained_at": "2026-09-17T14:37:49.575058",
+    "model_type": "logreg",
+    "hyperparameters": {
+      "C": 0.5
+    },
+    "metrics": {
+      "accuracy": 0.79,
+      "f1": 0.045454545454545456,
+      "roc_auc": 0.6088083904175857
+    }
+  },
+  {
+    "trained_at": "2026-09-17T14:38:20.171296",
+    "model_type": "logreg",
+    "hyperparameters": {
+      "C": 0.5
+    },
+    "metrics": {
+      "accuracy": 0.79,
+      "f1": 0.045454545454545456,
+      "roc_auc": 0.6088083904175857
+    }
   }
 ]

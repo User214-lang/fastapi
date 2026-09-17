@@ -3,3 +3,379 @@
 {"timestamp": "2026-09-15T17:49:30", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
 {"timestamp": "2026-09-15T17:49:30", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
 {"timestamp": "2026-09-15T17:49:31", "level": "INFO", "logger": "churn_service", "message": "Обучение завершено: accuracy=0.7875, f1=0.0449, roc_auc=0.6091"}
+{"timestamp": "2026-09-17T14:02:39", "level": "INFO", "logger": "churn_service", "message": "Модель загружена: тип=logreg, обучена=2026-09-15T17:49:31.128894"}
+{"timestamp": "2026-09-17T14:02:45", "level": "WARNING", "logger": "churn_service", "message": "HTTP 404: Not Found"}
+{"timestamp": "2026-09-17T14:05:49", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:05:51", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:06:01", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=logreg, hyperparameters={'additionalProp1': {}}"}
+{"timestamp": "2026-09-17T14:06:01", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
+{"timestamp": "2026-09-17T14:06:01", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
+{"timestamp": "2026-09-17T14:06:01", "level": "WARNING", "logger": "churn_service", "message": "HTTP 500: LogisticRegression.__init__() got an unexpected keyword argument 'additionalProp1'"}
+{"timestamp": "2026-09-17T14:06:47", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=logreg, hyperparameters={'C': 0.5}"}
+{"timestamp": "2026-09-17T14:06:47", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
+{"timestamp": "2026-09-17T14:06:47", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
+{"timestamp": "2026-09-17T14:06:47", "level": "INFO", "logger": "churn_service", "message": "Обучение завершено: accuracy=0.7900, f1=0.0455, roc_auc=0.6088"}
+{"timestamp": "2026-09-17T14:07:06", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=random_forest, hyperparameters={'n_estimators': 100, 'max_depth': 6}"}
+{"timestamp": "2026-09-17T14:07:06", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
+{"timestamp": "2026-09-17T14:07:06", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
+{"timestamp": "2026-09-17T14:07:07", "level": "INFO", "logger": "churn_service", "message": "Обучение завершено: accuracy=0.8050, f1=0.1333, roc_auc=0.6340"}
+{"timestamp": "2026-09-17T14:07:16", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=catboost, hyperparameters={'iterations': 300, 'depth': 6, 'learning_rate': 0.1}"}
+{"timestamp": "2026-09-17T14:07:16", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
+{"timestamp": "2026-09-17T14:07:16", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
+{"timestamp": "2026-09-17T14:07:18", "level": "INFO", "logger": "churn_service", "message": "Обучение завершено: accuracy=0.7675, f1=0.2185, roc_auc=0.6127"}
+{"timestamp": "2026-09-17T14:07:36", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:07:36", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:07:55", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=2, режим=batch"}
+{"timestamp": "2026-09-17T14:07:55", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=2, предсказания=[0, 1]"}
+{"timestamp": "2026-09-17T14:09:54", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
+{"timestamp": "2026-09-17T14:09:54", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
+{"timestamp": "2026-09-17T14:11:05", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
+{"timestamp": "2026-09-17T14:11:05", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
+{"timestamp": "2026-09-17T14:11:05", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
+{"timestamp": "2026-09-17T14:11:05", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
+{"timestamp": "2026-09-17T14:11:05", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
+{"timestamp": "2026-09-17T14:11:05", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
+{"timestamp": "2026-09-17T14:11:28", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
+{"timestamp": "2026-09-17T14:11:28", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
+{"timestamp": "2026-09-17T14:11:28", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:11:28", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:11:28", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=logreg, hyperparameters={}"}
+{"timestamp": "2026-09-17T14:11:28", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
+{"timestamp": "2026-09-17T14:11:28", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
+{"timestamp": "2026-09-17T14:11:29", "level": "INFO", "logger": "churn_service", "message": "Обучение завершено: accuracy=0.7875, f1=0.0449, roc_auc=0.6091"}
+{"timestamp": "2026-09-17T14:23:59", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:23:59", "level": "WARNING", "logger": "churn_service", "message": "POST /predict: модель не обучена, 503"}
+{"timestamp": "2026-09-17T14:23:59", "level": "WARNING", "logger": "churn_service", "message": "HTTP 503: Модель еще не обучена"}
+{"timestamp": "2026-09-17T14:23:59", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 503 Service Unavailable\""}
+{"timestamp": "2026-09-17T14:23:59", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:23:59", "level": "WARNING", "logger": "churn_service", "message": "Ошибка валидации запроса: [{'type': 'float_parsing', 'loc': ('body', 'FeatureVectorChurn', 'monthly_fee'), 'msg': 'Input should be a valid number, unable to parse string as a number', 'input': 'not_a_number'}, {'type': 'list_type', 'loc': ('body', 'list[FeatureVectorChurn]'), 'msg': 'Input should be a valid list', 'input': {'monthly_fee': 'not_a_number', 'usage_hours': 120.5, 'support_requests': 2, 'account_age_months': 15, 'failed_payments': 0, 'region': 'europe', 'device_type': 'mobile', 'payment_method': 'card', 'autopay_enabled': 1}}]"}
+{"timestamp": "2026-09-17T14:23:59", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 422 Unprocessable Entity\""}
+{"timestamp": "2026-09-17T14:23:59", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:23:59", "level": "WARNING", "logger": "churn_service", "message": "Ошибка валидации запроса: [{'type': 'missing', 'loc': ('body', 'FeatureVectorChurn', 'monthly_fee'), 'msg': 'Field required', 'input': {'usage_hours': 120.5, 'support_requests': 2, 'account_age_months': 15, 'failed_payments': 0, 'region': 'europe', 'device_type': 'mobile', 'payment_method': 'card', 'autopay_enabled': 1}}, {'type': 'list_type', 'loc': ('body', 'list[FeatureVectorChurn]'), 'msg': 'Input should be a valid list', 'input': {'usage_hours': 120.5, 'support_requests': 2, 'account_age_months': 15, 'failed_payments': 0, 'region': 'europe', 'device_type': 'mobile', 'payment_method': 'card', 'autopay_enabled': 1}}]"}
+{"timestamp": "2026-09-17T14:23:59", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 422 Unprocessable Entity\""}
+{"timestamp": "2026-09-17T14:23:59", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:23:59", "level": "WARNING", "logger": "churn_service", "message": "Ошибка валидации запроса: [{'type': 'extra_forbidden', 'loc': ('body', 'FeatureVectorChurn', 'extra_field'), 'msg': 'Extra inputs are not permitted', 'input': 'boom'}, {'type': 'list_type', 'loc': ('body', 'list[FeatureVectorChurn]'), 'msg': 'Input should be a valid list', 'input': {'monthly_fee': 29.99, 'usage_hours': 120.5, 'support_requests': 2, 'account_age_months': 15, 'failed_payments': 0, 'region': 'europe', 'device_type': 'mobile', 'payment_method': 'card', 'autopay_enabled': 1, 'extra_field': 'boom'}}]"}
+{"timestamp": "2026-09-17T14:23:59", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 422 Unprocessable Entity\""}
+{"timestamp": "2026-09-17T14:23:59", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:23:59", "level": "WARNING", "logger": "churn_service", "message": "Ошибка валидации запроса: [{'type': 'missing', 'loc': ('body', 'model_type'), 'msg': 'Field required', 'input': {}}, {'type': 'missing', 'loc': ('body', 'hyperparameters'), 'msg': 'Field required', 'input': {}}]"}
+{"timestamp": "2026-09-17T14:23:59", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/model/train \"HTTP/1.1 422 Unprocessable Entity\""}
+{"timestamp": "2026-09-17T14:23:59", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:23:59", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=logreg, hyperparameters={}"}
+{"timestamp": "2026-09-17T14:23:59", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: /nonexistent/path/churn.csv"}
+{"timestamp": "2026-09-17T14:23:59", "level": "ERROR", "logger": "churn_service", "message": "Датасет не найден: /nonexistent/path/churn.csv"}
+{"timestamp": "2026-09-17T14:23:59", "level": "WARNING", "logger": "churn_service", "message": "HTTP 404: Dataset file not found"}
+{"timestamp": "2026-09-17T14:23:59", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/model/train \"HTTP/1.1 404 Not Found\""}
+{"timestamp": "2026-09-17T14:23:59", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:23:59", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=logreg, hyperparameters={}"}
+{"timestamp": "2026-09-17T14:23:59", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: /tmp/pytest-of-user/pytest-0/test_train_with_empty_dataset_0/empty.csv"}
+{"timestamp": "2026-09-17T14:23:59", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=0, колонок=10"}
+{"timestamp": "2026-09-17T14:23:59", "level": "WARNING", "logger": "churn_service", "message": "Ошибка данных: Dataset is empty (0 rows)"}
+{"timestamp": "2026-09-17T14:23:59", "level": "WARNING", "logger": "churn_service", "message": "HTTP 400: {'code': 'DATA_ERROR', 'message': 'Dataset is empty (0 rows)', 'details': None}"}
+{"timestamp": "2026-09-17T14:23:59", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/model/train \"HTTP/1.1 400 Bad Request\""}
+{"timestamp": "2026-09-17T14:23:59", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:23:59", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=logreg, hyperparameters={}"}
+{"timestamp": "2026-09-17T14:23:59", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: /tmp/pytest-of-user/pytest-0/test_2000/churn.csv"}
+{"timestamp": "2026-09-17T14:23:59", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=20, колонок=10"}
+{"timestamp": "2026-09-17T14:23:59", "level": "INFO", "logger": "churn_service", "message": "Обучение завершено: accuracy=0.7500, f1=0.6667, roc_auc=0.5000"}
+{"timestamp": "2026-09-17T14:23:59", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/model/train \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:23:59", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:24:00", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:24:00", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:24:00", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:24:00", "level": "INFO", "logger": "httpx", "message": "HTTP Request: GET http://testserver/model/status \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:24:00", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=logreg, hyperparameters={'C': 0.5}"}
+{"timestamp": "2026-09-17T14:24:00", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
+{"timestamp": "2026-09-17T14:24:00", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
+{"timestamp": "2026-09-17T14:24:00", "level": "INFO", "logger": "churn_service", "message": "Обучение завершено: accuracy=0.7900, f1=0.0455, roc_auc=0.6088"}
+{"timestamp": "2026-09-17T14:24:00", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/model/train \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:24:00", "level": "INFO", "logger": "httpx", "message": "HTTP Request: GET http://testserver/model/status \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:24:00", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:24:00", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:24:00", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:24:00", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:24:00", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=logreg, hyperparameters={}"}
+{"timestamp": "2026-09-17T14:24:00", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
+{"timestamp": "2026-09-17T14:24:00", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
+{"timestamp": "2026-09-17T14:24:01", "level": "INFO", "logger": "churn_service", "message": "Обучение завершено: accuracy=0.7875, f1=0.0449, roc_auc=0.6091"}
+{"timestamp": "2026-09-17T14:24:01", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/model/train \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:24:01", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=2, режим=batch"}
+{"timestamp": "2026-09-17T14:24:01", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=2, предсказания=[0, 1]"}
+{"timestamp": "2026-09-17T14:24:01", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:24:01", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:24:01", "level": "WARNING", "logger": "churn_service", "message": "POST /predict: модель не обучена, 503"}
+{"timestamp": "2026-09-17T14:24:01", "level": "WARNING", "logger": "churn_service", "message": "HTTP 503: Модель еще не обучена"}
+{"timestamp": "2026-09-17T14:24:01", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 503 Service Unavailable\""}
+{"timestamp": "2026-09-17T14:24:01", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:24:01", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=logreg, hyperparameters={}"}
+{"timestamp": "2026-09-17T14:24:01", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
+{"timestamp": "2026-09-17T14:24:01", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
+{"timestamp": "2026-09-17T14:24:01", "level": "INFO", "logger": "churn_service", "message": "Обучение завершено: accuracy=0.7875, f1=0.0449, roc_auc=0.6091"}
+{"timestamp": "2026-09-17T14:24:01", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/model/train \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:24:01", "level": "INFO", "logger": "httpx", "message": "HTTP Request: GET http://testserver/model/status \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:24:01", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=random_forest, hyperparameters={'n_estimators': 50, 'max_depth': 4}"}
+{"timestamp": "2026-09-17T14:24:01", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
+{"timestamp": "2026-09-17T14:24:01", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
+{"timestamp": "2026-09-17T14:24:02", "level": "INFO", "logger": "churn_service", "message": "Обучение завершено: accuracy=0.8000, f1=0.0244, roc_auc=0.6220"}
+{"timestamp": "2026-09-17T14:24:02", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/model/train \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:24:02", "level": "INFO", "logger": "httpx", "message": "HTTP Request: GET http://testserver/model/status \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:24:02", "level": "INFO", "logger": "httpx", "message": "HTTP Request: GET http://testserver/model/status \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:24:02", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:24:02", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:24:02", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:24:02", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:24:02", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:24:02", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:24:02", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:24:02", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:24:02", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:24:02", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:24:03", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:24:03", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:24:03", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:24:03", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:24:03", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:24:03", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:24:03", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:24:03", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:24:03", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:24:03", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:24:03", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:24:03", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:24:03", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:24:03", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:24:03", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:24:03", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:24:03", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:24:03", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:24:03", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:24:03", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:37:49", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=logreg, hyperparameters={'C': 0.5}"}
+{"timestamp": "2026-09-17T14:37:49", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
+{"timestamp": "2026-09-17T14:37:49", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
+{"timestamp": "2026-09-17T14:37:49", "level": "INFO", "logger": "churn_service", "message": "Обучение завершено: accuracy=0.7900, f1=0.0455, roc_auc=0.6088"}
+{"timestamp": "2026-09-17T14:38:19", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=logreg, hyperparameters={'C': 0.5}"}
+{"timestamp": "2026-09-17T14:38:19", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
+{"timestamp": "2026-09-17T14:38:19", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
+{"timestamp": "2026-09-17T14:38:20", "level": "INFO", "logger": "churn_service", "message": "Обучение завершено: accuracy=0.7900, f1=0.0455, roc_auc=0.6088"}
+{"timestamp": "2026-09-17T14:40:35", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:40:35", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:40:49", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=2, режим=batch"}
+{"timestamp": "2026-09-17T14:40:49", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=2, предсказания=[0, 1]"}
+{"timestamp": "2026-09-17T14:43:45", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:43:45", "level": "WARNING", "logger": "churn_service", "message": "POST /predict: модель не обучена, 503"}
+{"timestamp": "2026-09-17T14:43:45", "level": "WARNING", "logger": "churn_service", "message": "HTTP 503: Модель еще не обучена"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 503 Service Unavailable\""}
+{"timestamp": "2026-09-17T14:43:46", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:43:46", "level": "WARNING", "logger": "churn_service", "message": "Ошибка валидации запроса: [{'type': 'float_parsing', 'loc': ('body', 'FeatureVectorChurn', 'monthly_fee'), 'msg': 'Input should be a valid number, unable to parse string as a number', 'input': 'not_a_number'}, {'type': 'list_type', 'loc': ('body', 'list[FeatureVectorChurn]'), 'msg': 'Input should be a valid list', 'input': {'monthly_fee': 'not_a_number', 'usage_hours': 120.5, 'support_requests': 2, 'account_age_months': 15, 'failed_payments': 0, 'region': 'europe', 'device_type': 'mobile', 'payment_method': 'card', 'autopay_enabled': 1}}]"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 422 Unprocessable Entity\""}
+{"timestamp": "2026-09-17T14:43:46", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:43:46", "level": "WARNING", "logger": "churn_service", "message": "Ошибка валидации запроса: [{'type': 'missing', 'loc': ('body', 'FeatureVectorChurn', 'monthly_fee'), 'msg': 'Field required', 'input': {'usage_hours': 120.5, 'support_requests': 2, 'account_age_months': 15, 'failed_payments': 0, 'region': 'europe', 'device_type': 'mobile', 'payment_method': 'card', 'autopay_enabled': 1}}, {'type': 'list_type', 'loc': ('body', 'list[FeatureVectorChurn]'), 'msg': 'Input should be a valid list', 'input': {'usage_hours': 120.5, 'support_requests': 2, 'account_age_months': 15, 'failed_payments': 0, 'region': 'europe', 'device_type': 'mobile', 'payment_method': 'card', 'autopay_enabled': 1}}]"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 422 Unprocessable Entity\""}
+{"timestamp": "2026-09-17T14:43:46", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:43:46", "level": "WARNING", "logger": "churn_service", "message": "Ошибка валидации запроса: [{'type': 'extra_forbidden', 'loc': ('body', 'FeatureVectorChurn', 'extra_field'), 'msg': 'Extra inputs are not permitted', 'input': 'boom'}, {'type': 'list_type', 'loc': ('body', 'list[FeatureVectorChurn]'), 'msg': 'Input should be a valid list', 'input': {'monthly_fee': 29.99, 'usage_hours': 120.5, 'support_requests': 2, 'account_age_months': 15, 'failed_payments': 0, 'region': 'europe', 'device_type': 'mobile', 'payment_method': 'card', 'autopay_enabled': 1, 'extra_field': 'boom'}}]"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 422 Unprocessable Entity\""}
+{"timestamp": "2026-09-17T14:43:46", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:43:46", "level": "WARNING", "logger": "churn_service", "message": "Ошибка валидации запроса: [{'type': 'missing', 'loc': ('body', 'model_type'), 'msg': 'Field required', 'input': {}}, {'type': 'missing', 'loc': ('body', 'hyperparameters'), 'msg': 'Field required', 'input': {}}]"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/model/train \"HTTP/1.1 422 Unprocessable Entity\""}
+{"timestamp": "2026-09-17T14:43:46", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=logreg, hyperparameters={}"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: /nonexistent/path/churn.csv"}
+{"timestamp": "2026-09-17T14:43:46", "level": "ERROR", "logger": "churn_service", "message": "Датасет не найден: /nonexistent/path/churn.csv"}
+{"timestamp": "2026-09-17T14:43:46", "level": "WARNING", "logger": "churn_service", "message": "HTTP 404: Dataset file not found"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/model/train \"HTTP/1.1 404 Not Found\""}
+{"timestamp": "2026-09-17T14:43:46", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=logreg, hyperparameters={}"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: /tmp/pytest-of-user/pytest-1/test_train_with_empty_dataset_0/empty.csv"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=0, колонок=10"}
+{"timestamp": "2026-09-17T14:43:46", "level": "WARNING", "logger": "churn_service", "message": "Ошибка данных: Dataset is empty (0 rows)"}
+{"timestamp": "2026-09-17T14:43:46", "level": "WARNING", "logger": "churn_service", "message": "HTTP 400: {'code': 'DATA_ERROR', 'message': 'Dataset is empty (0 rows)', 'details': None}"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/model/train \"HTTP/1.1 400 Bad Request\""}
+{"timestamp": "2026-09-17T14:43:46", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=logreg, hyperparameters={}"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: /tmp/pytest-of-user/pytest-1/test_2000/churn.csv"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=20, колонок=10"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "churn_service", "message": "Обучение завершено: accuracy=0.7500, f1=0.6667, roc_auc=0.5000"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/model/train \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:43:46", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "httpx", "message": "HTTP Request: GET http://testserver/model/status \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=logreg, hyperparameters={'C': 0.5}"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "churn_service", "message": "Обучение завершено: accuracy=0.7900, f1=0.0455, roc_auc=0.6088"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/model/train \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "httpx", "message": "HTTP Request: GET http://testserver/model/status \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:43:46", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=logreg, hyperparameters={}"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
+{"timestamp": "2026-09-17T14:43:46", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
+{"timestamp": "2026-09-17T14:43:47", "level": "INFO", "logger": "churn_service", "message": "Обучение завершено: accuracy=0.7875, f1=0.0449, roc_auc=0.6091"}
+{"timestamp": "2026-09-17T14:43:47", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/model/train \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:43:47", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=2, режим=batch"}
+{"timestamp": "2026-09-17T14:43:47", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=2, предсказания=[0, 1]"}
+{"timestamp": "2026-09-17T14:43:47", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:43:47", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:43:47", "level": "WARNING", "logger": "churn_service", "message": "POST /predict: модель не обучена, 503"}
+{"timestamp": "2026-09-17T14:43:47", "level": "WARNING", "logger": "churn_service", "message": "HTTP 503: Модель еще не обучена"}
+{"timestamp": "2026-09-17T14:43:47", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 503 Service Unavailable\""}
+{"timestamp": "2026-09-17T14:43:47", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:43:47", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=logreg, hyperparameters={}"}
+{"timestamp": "2026-09-17T14:43:47", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
+{"timestamp": "2026-09-17T14:43:47", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
+{"timestamp": "2026-09-17T14:43:47", "level": "INFO", "logger": "churn_service", "message": "Обучение завершено: accuracy=0.7875, f1=0.0449, roc_auc=0.6091"}
+{"timestamp": "2026-09-17T14:43:47", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/model/train \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:43:47", "level": "INFO", "logger": "httpx", "message": "HTTP Request: GET http://testserver/model/status \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:43:47", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=random_forest, hyperparameters={'n_estimators': 50, 'max_depth': 4}"}
+{"timestamp": "2026-09-17T14:43:47", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
+{"timestamp": "2026-09-17T14:43:47", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "churn_service", "message": "Обучение завершено: accuracy=0.8000, f1=0.0244, roc_auc=0.6220"}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/model/train \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "httpx", "message": "HTTP Request: GET http://testserver/model/status \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "httpx", "message": "HTTP Request: GET http://testserver/model/status \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:43:48", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:43:49", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:49:49", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:49:49", "level": "WARNING", "logger": "churn_service", "message": "POST /predict: модель не обучена, 503"}
+{"timestamp": "2026-09-17T14:49:49", "level": "WARNING", "logger": "churn_service", "message": "HTTP 503: Модель еще не обучена"}
+{"timestamp": "2026-09-17T14:49:49", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 503 Service Unavailable\""}
+{"timestamp": "2026-09-17T14:49:49", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:49:49", "level": "WARNING", "logger": "churn_service", "message": "Ошибка валидации запроса: [{'type': 'float_parsing', 'loc': ('body', 'FeatureVectorChurn', 'monthly_fee'), 'msg': 'Input should be a valid number, unable to parse string as a number', 'input': 'not_a_number'}, {'type': 'list_type', 'loc': ('body', 'list[FeatureVectorChurn]'), 'msg': 'Input should be a valid list', 'input': {'monthly_fee': 'not_a_number', 'usage_hours': 120.5, 'support_requests': 2, 'account_age_months': 15, 'failed_payments': 0, 'region': 'europe', 'device_type': 'mobile', 'payment_method': 'card', 'autopay_enabled': 1}}]"}
+{"timestamp": "2026-09-17T14:49:49", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 422 Unprocessable Entity\""}
+{"timestamp": "2026-09-17T14:49:49", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:49:49", "level": "WARNING", "logger": "churn_service", "message": "Ошибка валидации запроса: [{'type': 'missing', 'loc': ('body', 'FeatureVectorChurn', 'monthly_fee'), 'msg': 'Field required', 'input': {'usage_hours': 120.5, 'support_requests': 2, 'account_age_months': 15, 'failed_payments': 0, 'region': 'europe', 'device_type': 'mobile', 'payment_method': 'card', 'autopay_enabled': 1}}, {'type': 'list_type', 'loc': ('body', 'list[FeatureVectorChurn]'), 'msg': 'Input should be a valid list', 'input': {'usage_hours': 120.5, 'support_requests': 2, 'account_age_months': 15, 'failed_payments': 0, 'region': 'europe', 'device_type': 'mobile', 'payment_method': 'card', 'autopay_enabled': 1}}]"}
+{"timestamp": "2026-09-17T14:49:49", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 422 Unprocessable Entity\""}
+{"timestamp": "2026-09-17T14:49:49", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:49:49", "level": "WARNING", "logger": "churn_service", "message": "Ошибка валидации запроса: [{'type': 'extra_forbidden', 'loc': ('body', 'FeatureVectorChurn', 'extra_field'), 'msg': 'Extra inputs are not permitted', 'input': 'boom'}, {'type': 'list_type', 'loc': ('body', 'list[FeatureVectorChurn]'), 'msg': 'Input should be a valid list', 'input': {'monthly_fee': 29.99, 'usage_hours': 120.5, 'support_requests': 2, 'account_age_months': 15, 'failed_payments': 0, 'region': 'europe', 'device_type': 'mobile', 'payment_method': 'card', 'autopay_enabled': 1, 'extra_field': 'boom'}}]"}
+{"timestamp": "2026-09-17T14:49:49", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 422 Unprocessable Entity\""}
+{"timestamp": "2026-09-17T14:49:49", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:49:49", "level": "WARNING", "logger": "churn_service", "message": "Ошибка валидации запроса: [{'type': 'missing', 'loc': ('body', 'model_type'), 'msg': 'Field required', 'input': {}}, {'type': 'missing', 'loc': ('body', 'hyperparameters'), 'msg': 'Field required', 'input': {}}]"}
+{"timestamp": "2026-09-17T14:49:49", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/model/train \"HTTP/1.1 422 Unprocessable Entity\""}
+{"timestamp": "2026-09-17T14:49:49", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:49:49", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=logreg, hyperparameters={}"}
+{"timestamp": "2026-09-17T14:49:49", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: /nonexistent/path/churn.csv"}
+{"timestamp": "2026-09-17T14:49:49", "level": "ERROR", "logger": "churn_service", "message": "Датасет не найден: /nonexistent/path/churn.csv"}
+{"timestamp": "2026-09-17T14:49:49", "level": "WARNING", "logger": "churn_service", "message": "HTTP 404: Dataset file not found"}
+{"timestamp": "2026-09-17T14:49:49", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/model/train \"HTTP/1.1 404 Not Found\""}
+{"timestamp": "2026-09-17T14:49:49", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:49:49", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=logreg, hyperparameters={}"}
+{"timestamp": "2026-09-17T14:49:49", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: /tmp/pytest-of-user/pytest-2/test_train_with_empty_dataset_0/empty.csv"}
+{"timestamp": "2026-09-17T14:49:49", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=0, колонок=10"}
+{"timestamp": "2026-09-17T14:49:49", "level": "WARNING", "logger": "churn_service", "message": "Ошибка данных: Dataset is empty (0 rows)"}
+{"timestamp": "2026-09-17T14:49:49", "level": "WARNING", "logger": "churn_service", "message": "HTTP 400: {'code': 'DATA_ERROR', 'message': 'Dataset is empty (0 rows)', 'details': None}"}
+{"timestamp": "2026-09-17T14:49:49", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/model/train \"HTTP/1.1 400 Bad Request\""}
+{"timestamp": "2026-09-17T14:49:49", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:49:49", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=logreg, hyperparameters={}"}
+{"timestamp": "2026-09-17T14:49:49", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: /tmp/pytest-of-user/pytest-2/test_2000/churn.csv"}
+{"timestamp": "2026-09-17T14:49:49", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=20, колонок=10"}
+{"timestamp": "2026-09-17T14:49:49", "level": "INFO", "logger": "churn_service", "message": "Обучение завершено: accuracy=0.7500, f1=0.6667, roc_auc=0.5000"}
+{"timestamp": "2026-09-17T14:49:50", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/model/train \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:49:50", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:49:50", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:49:50", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:49:50", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:49:50", "level": "INFO", "logger": "httpx", "message": "HTTP Request: GET http://testserver/model/status \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:49:50", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=logreg, hyperparameters={'C': 0.5}"}
+{"timestamp": "2026-09-17T14:49:50", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
+{"timestamp": "2026-09-17T14:49:50", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
+{"timestamp": "2026-09-17T14:49:50", "level": "INFO", "logger": "churn_service", "message": "Обучение завершено: accuracy=0.7900, f1=0.0455, roc_auc=0.6088"}
+{"timestamp": "2026-09-17T14:49:50", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/model/train \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:49:50", "level": "INFO", "logger": "httpx", "message": "HTTP Request: GET http://testserver/model/status \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:49:50", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:49:50", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:49:50", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:49:50", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:49:50", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=logreg, hyperparameters={}"}
+{"timestamp": "2026-09-17T14:49:50", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
+{"timestamp": "2026-09-17T14:49:50", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
+{"timestamp": "2026-09-17T14:49:51", "level": "INFO", "logger": "churn_service", "message": "Обучение завершено: accuracy=0.7875, f1=0.0449, roc_auc=0.6091"}
+{"timestamp": "2026-09-17T14:49:51", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/model/train \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:49:51", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=2, режим=batch"}
+{"timestamp": "2026-09-17T14:49:51", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=2, предсказания=[0, 1]"}
+{"timestamp": "2026-09-17T14:49:51", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:49:51", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:49:51", "level": "WARNING", "logger": "churn_service", "message": "POST /predict: модель не обучена, 503"}
+{"timestamp": "2026-09-17T14:49:51", "level": "WARNING", "logger": "churn_service", "message": "HTTP 503: Модель еще не обучена"}
+{"timestamp": "2026-09-17T14:49:51", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 503 Service Unavailable\""}
+{"timestamp": "2026-09-17T14:49:51", "level": "WARNING", "logger": "churn_service", "message": "Модель не найдена при старте. Обучите через POST /model/train"}
+{"timestamp": "2026-09-17T14:49:51", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=logreg, hyperparameters={}"}
+{"timestamp": "2026-09-17T14:49:51", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
+{"timestamp": "2026-09-17T14:49:51", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
+{"timestamp": "2026-09-17T14:49:51", "level": "INFO", "logger": "churn_service", "message": "Обучение завершено: accuracy=0.7875, f1=0.0449, roc_auc=0.6091"}
+{"timestamp": "2026-09-17T14:49:51", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/model/train \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:49:51", "level": "INFO", "logger": "httpx", "message": "HTTP Request: GET http://testserver/model/status \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:49:51", "level": "INFO", "logger": "churn_service", "message": "Запуск обучения: model_type=random_forest, hyperparameters={'n_estimators': 50, 'max_depth': 4}"}
+{"timestamp": "2026-09-17T14:49:51", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
+{"timestamp": "2026-09-17T14:49:51", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "churn_service", "message": "Обучение завершено: accuracy=0.8000, f1=0.0244, roc_auc=0.6220"}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/model/train \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "httpx", "message": "HTTP Request: GET http://testserver/model/status \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "httpx", "message": "HTTP Request: GET http://testserver/model/status \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "churn_service", "message": "POST /predict: получено объектов=1, режим=single"}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "churn_service", "message": "POST /predict: успешно обработано=1, предсказания=[0]"}
+{"timestamp": "2026-09-17T14:49:52", "level": "INFO", "logger": "httpx", "message": "HTTP Request: POST http://testserver/predict \"HTTP/1.1 200 OK\""}
+{"timestamp": "2026-09-17T14:55:14", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
+{"timestamp": "2026-09-17T14:55:14", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
+{"timestamp": "2026-09-17T14:55:14", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
+{"timestamp": "2026-09-17T14:55:14", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
+{"timestamp": "2026-09-17T14:55:14", "level": "INFO", "logger": "churn_service.dataset", "message": "Загрузка датасета: data/churn_dataset.csv"}
+{"timestamp": "2026-09-17T14:55:14", "level": "INFO", "logger": "churn_service.dataset", "message": "Датасет загружен: строк=2000, колонок=10"}
